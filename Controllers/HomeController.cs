@@ -1,6 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Diagnostics;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq.Expressions;
+using Widgets.Data.Models;
 using Widgets.Models;
 using Widgets.Services;
 
@@ -17,9 +22,12 @@ namespace Widgets.Controllers
             _widgetService = widgetService;
         }
 
+
         public IActionResult Index()
         {
-            return View();
+            object getAllWidgets = _widgetService.GetAllWidgets();
+            var list = getAllWidgets;
+            return View(list);
         }
 
         public IActionResult Privacy()
