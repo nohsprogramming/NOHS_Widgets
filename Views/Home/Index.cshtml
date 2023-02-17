@@ -4,48 +4,49 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<head>
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
-</head>
-<div class="text-center">
-    
-</div>
-<table>
-    <thead>
-        <tr>
-            <th>WidgetId</th>
-            <th>WidgetName</th>
-            <th>Qty</th>
-            <th>WidgetImage</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.WidgetId</td>
-                <td>@item.WidgetName</td>
-                <td>@item.Qty</td>
-                <td><img height="250" src="@item.WidgetImage"></td>
-            </tr>
-
+<html>
+    <head>
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
             }
-        
-    </tbody>
-</table>
+
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="text-center">
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>WidgetId</th>
+                    <th>WidgetName</th>
+                    <th>Qty</th>
+                    <th>WidgetImage</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.WidgetId</td>
+                        <td>@item.WidgetName</td>
+                        <td>@item.Qty</td>
+                        <td><img height="250" src="@item.WidgetImage"></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </body>
+</html>
