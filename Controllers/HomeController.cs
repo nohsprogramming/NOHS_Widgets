@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
+using System.Linq;
 using Widgets.Models;
 using Widgets.Services;
 
@@ -19,7 +20,9 @@ namespace Widgets.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var widgets = _widgetService.GetAllWidgets().ToList();
+
+            return View(widgets);
         }
 
         public IActionResult Privacy()
