@@ -1,7 +1,70 @@
-﻿@using Widgets.Data.Models
+﻿@model IEnumerable<Widgets.Data.Models.Widget>
+@using Widgets.Data.Models
+@using Widgets.Data
+
 @{
     ViewData["Title"] = "Home Page";
 }
 
+<style>
+    /* Style the container */
+    .widget-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 20px;
+    }
+
+    /* Style each widget item */
+    .widget-item {
+        flex-basis: calc(33.33% - 20px); /* 3 items per row with spacing */
+        margin: 10px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.2s; /* Add a hover effect */
+    }
+
+    /* Style the titles and values */
+    .widget-title {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .widget-value {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    /* Style the images */
+    .widget-image {
+        max-width: 100%;
+        height: auto;
+        margin-top: 15px;
+    }
+
+    /* Add hover effect on widget items */
+    .widget-item:hover {
+        transform: scale(1.05); /* Enlarge the item on hover */
+    }
+</style>
+
 <div class="text-center">
+    <h2>Welcome to Our Widget Store!</h2>
+    <p>We have a wide selection of widgets for you to choose from.</p>
+</div>
+
+<div class="widget-container">
+    @foreach (var widget in Model)
+    {
+        <div class="widget-item">
+            <img class="widget-image" src="@widget.WidgetImage" alt="@widget.WidgetName" />
+            <div class="widget-title">ID: @widget.WidgetId</div>
+            <div class="widget-value">Name: @widget.WidgetName</div>
+            <div class="widget-value">Quantity: @widget.Qty</div>
+        </div>
+    }
 </div>
