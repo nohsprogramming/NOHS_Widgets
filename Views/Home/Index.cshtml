@@ -3,14 +3,40 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+<style>
+    /* Add CSS styles here */
+    .widget-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .widget {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .widget img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+</style>
 
 <h1>Widget List</h1>
 
 <div class="text-center">
-
-    @foreach(var widget in Model)
-    {
-        <lis>Widget Id: @widget.WidgetId Widget Name: @widget.WidgetName Qty:@widget.Qty <img src="@widget.WidgetImage" /></lis>
-    }
-
+    <ul class="widget-list">
+        @foreach (var widget in Model)
+        {
+            <li class="widget">
+                <h3>Widget Id: @widget.WidgetId</h3>
+                <p>Widget Name: @widget.WidgetName</p>
+                <p>Qty: @widget.Qty</p>
+                <img src="@widget.WidgetImage" alt="Widget Image" />
+            </li>
+        }
+    </ul>
 </div>
