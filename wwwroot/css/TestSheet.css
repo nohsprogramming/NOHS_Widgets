@@ -1,0 +1,623 @@
+﻿namespace Widgets.wwwroot.css
+/* Reset some default styles for consistency */
+@font-face {
+    font-family: 'Proxima Nova ExCn Extrabold';
+    src: url('../Fonts/Proxima Nova ExCn Extrabold.otf') format('opentype');
+    font-style: italic;
+    font-weight: 800; /* Specify the correct font weight if needed */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    overflow: hidden;
+}
+
+body.hover-scrollbar ::-webkit-scrollbar {
+    width: 6px;
+    overflow: hidden;
+    opacity: 1; /* Initial opacity */
+    visibility: visible; /* Initial visibility */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+body.hover-scrollbar ::-webkit-scrollbar-thumb {
+    overflow: hidden;
+    background-color: #555;
+    border-radius: 6px;
+    transition: background-color 1.5s ease;
+}
+
+
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #666;
+    }
+
+
+
+/* Set a black background for the body */
+body {
+    font-family: 'Proxima Nova ExCn Extrabold', sans-serif;
+    font-style: normal;
+    background-color: #fff;
+    margin:0;
+    padding: 0;
+}
+
+header {
+    border: none;
+}
+
+
+nav {
+    list-style-type: none;
+    max-width: 100%;
+}
+
+
+/* Styles for the navigation bar with a black background */
+.navbar {
+    background: linear-gradient(to bottom, rgba(248, 248, 255, 0.14), rgba(17, 17, 17, 0.4));
+    max-width: 100%;
+    margin: 0;
+    border: none;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Add box-shadow for a subtle shadow effect */
+}
+
+    .navbar a h1 {
+        background: linear-gradient(to top, #f7ab28, #f5e03d);
+        -webkit-background-clip: text; /* For WebKit/Blink browsers like Chrome and Safari */
+        background-clip: text; /* Standard property */
+        color: transparent; /* Set text color to transparent */
+        margin-left: 50px;
+        font-style: italic;
+        font-size: xxx-large;
+    }
+
+    .d-flex {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+    }
+
+.featured-image-description {
+    margin-top: -10px;
+    width: fit-content;
+    display: inline-block;
+}
+
+    .featured-image-description h1 {
+        margin-top: -40px;
+    }
+
+.featured-image-description h2{
+    margin-left: 230px;
+    font-size: 40px;
+}
+
+.inside-checkout-header {
+    margin-top: -10px;
+    height: 10px;
+}
+
+.inside-checkout-card {
+    color: black;
+    margin: -10px;
+    margin-top: 40px;
+    margin-bottom: -30px;
+    border-radius: 8px;
+    box-shadow: 1px 2px 8px 0px rgba(255, 0, 0, 0.5);
+    background-color: rgba(255,255,255,1);
+    /*background-color: rgba(0,0,5,1);*/
+}
+
+
+.inside-checkout {
+    margin-top: 20px;
+    height: 10px;
+}
+
+.plus-sign {
+    box-shadow: 1px 2px 1px 0px rgba(255, 0, 0, 0.1);
+    background-color: white;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin: 2px;
+    display: inline-block;
+    padding: 5px;
+}
+
+.minus-sign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 2px 1px 0px rgba(255, 0, 0, 0.1);
+    background-color: white;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    display: inline-block;
+    padding: 5px;
+    width: 23px;
+}
+
+.plus-sign:hover, .minus-sign:hover {
+    background-color: rgba(0,0,0,.1);
+}
+
+.minus-sign p {
+    color: rgba(0,0,0,.5);
+    margin-left:1px;
+    font-weight: 900;
+    position: center;
+}
+
+.plus-sign p {
+    color: rgba(0,0,0,.8);
+    font-weight: 800;
+    position: center;
+}
+
+
+
+.checkout-items img {
+    box-shadow: 2px 2px 6px rgba(255, 255, 255, .6);
+    border-radius: 2px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+.item-button {
+    margin: 10px;
+}
+
+.item-descp {
+    margin: auto;
+}
+
+.item-image {
+    margin-left: auto;
+    border-radius: 6px;
+    background-color: rgba(200,200,200,.1);
+    padding: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.02);
+}
+
+.checkout-items {
+    height: 60px;
+    background: linear-gradient(to left, rgba(255, 254, 225,1), rgba(255, 255, 255,1));
+    background-color: rgba(255,255,255,.8);
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    width: -webkit-fill-available;
+    display: inline-flex;
+    border: 0px dashed black;
+}
+
+    .checkout-items p {
+        color: rgba(0,0,0,.85);
+        font-weight: bold;
+        display: inline-block;
+    }
+
+.spacer-cart {
+    border: 2px solid red;
+    margin-top: 50px;
+}
+
+.inside-checkout-ur-items-header {
+}
+
+.purchase-button {
+    border: 2px solid white;
+    border-radius: 90px;
+}
+
+.purchase-button:hover {
+    background-color:white;
+    color: black;
+}
+
+    .purchase-button h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+.inside-checkout-footer {
+    margin-top: 50px;
+}
+
+.inside-checkout-ur-items {
+    padding: 5px;
+    border-radius: 8px;
+    background: linear-gradient(to bottom right, rgba(193, 211, 227,.4), rgba(62, 44, 28,.2));
+}
+
+.inside-checkout-ur-items p {
+    font-size:larger;
+    font-weight:700;
+}
+
+.rest-of-images {
+    display: grid;
+}
+
+/* Style the links in the navigation bar */
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+.nav-link.text-light {
+    font-weight: 700;
+}
+
+/* Style the list items in the navigation bar */
+.nav li {
+    display: inline-block; /* Display list items horizontally */
+    margin-right: 10px; /* Adjust as needed */
+}
+
+.card-inside {
+}
+
+.load-em-up {
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.02);
+    margin: 21px;
+    background-color: rgba(255, 255, 255, 1);
+    height: 245px;
+    width: 300px;
+    border-radius: 8px;
+    padding: 5px;
+    position: relative; /* Required for absolute positioning of the fading element */
+}
+
+
+.card-thing {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 8px;
+    padding: 8px;
+    margin: 8px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.3s; /* Add transition for smooth effect */
+}
+
+/*
+
+.fading-element {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    opacity: 1; 
+    transition: opacity 0.1s; 
+}
+
+    */
+.rest-of-images-container {
+    display: flex;
+    height: 100px;
+}
+
+.rest-of-images img {
+    height: 100%;
+    width: 100px;
+    margin-left: 50px;
+}
+/* Style the container for the navbar */
+.navbar-container {
+    width: 100%; /* Span 100% of the width */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space elements evenly */
+}
+
+.spacer h2 {
+    padding: 0px;
+    color: rgba(33, 29, 29, 0.15);
+    position: revert-layer;
+    margin-left: 44px;
+}
+
+.container-fluid h1 {
+    padding: 10px;
+}
+
+.rest-of-images {
+}
+
+/* Style the container for the navbar */
+.container-fluid {
+    height: 75px;
+    width: 100%;
+    display: flex;
+    margin: 0;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2); /* Add box-shadow for a subtle shadow effect */
+}
+
+.nav {
+    padding: 29px;
+}
+
+.container-fluid ul {
+    margin-left: 80px;
+}
+
+/* Remove bullets for the list items in the navigation bar */
+.navbar-nav {
+    list-style-type: none;
+    padding: 0;
+    text-align: center; /* Center the content horizontally */
+}
+
+    /* Style the list items in the navigation bar */
+    .navbar-nav li {
+        display: inline-block;
+        margin-right: 15px;
+    }
+
+
+.spacer {
+    height: 17px;
+    margin: -13px;
+}
+/* Set the opacity for the rest of the body */
+.main-content {
+    padding: 30px;
+    margin: 40px;
+    margin-top: -30px;
+    color: white;
+    display: flex;
+}
+
+.main-content.check-out-menu {
+    margin-left: 20px;
+}
+
+.star-stuff {
+    font-weight: 900;
+    font-size: 23px;
+    margin-top: 40px;
+}
+
+.check-out-menu {
+    height: fit-content;
+    padding: 20px;
+    margin-left: 20px;
+    background-color: rgb(0,0,0,.9);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    width: 300px;
+}
+
+.testing {
+    width: 240px;
+}
+
+.main-content.other-images {
+    display: grid;
+}
+
+
+    .f-i-d-tittle h2 {
+        font: menu;
+        font-weight: 100;
+        margin-left: -3px;
+        margin-top: -12px;
+        font-size: 60px;
+        font-stretch: condensed;
+    }
+
+.f-i-d-description h6,h5,h4,h3 {
+    margin-top: -10px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.f-i-d-description p {
+    font-feature-settings: "smcp", "zero";
+    font-stretch: condensed;
+    display: grid;
+    color: black;
+    font-style: normal;
+}
+.f-i-d-description {
+    max-width: 75%;
+
+}
+
+.other-images {
+    display:grid;
+    color: white;
+    position:absolute;
+    padding: 10px;
+    margin-top: -10px;
+    
+}
+.featured-info-display img {
+    max-height: 100%;
+    max-width: 100%;
+    position: center;
+    border-radius: 25px;
+}
+
+.featured-display-box {
+    height: 130px;
+    width: 135px;
+}
+
+    .featured-display-box img {
+        /*display: block;*/
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
+    }
+
+.display-quantity {
+    display: grid;
+    position: absolute;
+    margin-left: 72px;
+    color: black;
+}
+
+.display-quantity h6 {
+        font-style: italic;
+    color: green;
+}
+
+.card-inside-desc{
+
+}
+
+.card-inside-desc h6 {
+    color: black;
+}
+
+.featured-info.featured-info-display {
+    height: 50px;
+    width: 50px;
+}
+
+
+/* Example of styling a container within the main content */
+.container {
+    background-color: rgba(33, 29, 29, 0.04);
+    padding: 15px; /* Adjust as needed */
+    margin-top: 20px; /* Adjust as needed */
+    position: fixed;
+}
+
+.featured-image img {
+    display: initial;
+    width: 100%;
+    height: 100%;
+    box-shadow: -30px -10px 30px 11px;
+    opacity: 0.85;
+    border-radius: 4px;
+}
+
+.featured-image {
+    margin: 0;
+    display: block;
+    min-height: 400px;
+    min-width: 400px;
+    max-height: 450px;
+    max-width: 450px;
+}
+
+.spacing-container::before {
+    content: '';
+    position: inherit;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px; /* Adjust the height as needed for the fading effect */
+    background: linear-gradient(to bottom, red, black);
+    pointer-events: none; /* Make sure the pseudo-element doesn't interfere with hover */
+    z-index: 1; /* Ensure the pseudo-element is above the card content */
+}
+
+
+.card-thing:hover {
+    background-color: rgba(240,240,240, .9);
+    color: white;
+}
+
+.card-thing:hover h2 {
+    color: black;
+}
+
+.card-thing:hover h6 {
+    color: black;
+}
+
+.card-thing:hover h3 {
+    color: black;
+}
+
+
+
+input {
+    font-weight: 800;
+    font-stretch: expanded;
+    font-style: italic;
+    width: 450px;
+    border-radius: 20px;
+    border: none;
+    padding: 8px;
+    margin: 4px;
+}
+
+.featured-image h1, h2, h3 {
+    color: black;
+}
+
+.spacing-container {
+    background: linear-gradient(to bottom right, rgb(193, 211, 227), rgba(62, 44, 28,.2));
+    position: relative;
+    margin: 10px;
+    overflow: auto;
+    height: 220px;
+    border-radius: 10px;
+}
+
+
+.featured-info { /*black box*/
+    height: 190px;
+    padding: 16px;
+    display: inline-flex;
+    margin-left: 21px;
+    min-width: 300px;
+    max-height: 200px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01);
+}
+
+
+/*
+
+.featured-info-description {
+    background-color: red;
+    border: 2px solid #f5e03d;
+    width: 50%;
+    height: 100%;
+}
+
+.featured-info.featured-info-display {
+    display:inherit;
+    border: 3px solid #ff6a00;
+    height: 100%;
+    width: 50%;
+}
+    */
+
+
+.featured-info-description,
+.featured-info-display {
+    display: flex; /* Make both child elements share an equal portion of the container */
+    overflow: hidden; /* To hide any content that might overflow */
+}
+
+
+footer {
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+    margin-left: 574px;
+}
+
+
+
+/* Add more styles for other elements as needed */

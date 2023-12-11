@@ -1,7 +1,210 @@
-﻿@using Widgets.Data.Models
+﻿@model IEnumerable<Widgets.Data.Models.Widget>
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
+@{
+    // Select the model skelly
+    var selectedModel = Model.FirstOrDefault(model => model.WidgetId == 4);
+}
+
+<div class="main-content">
+    <div class="featured-image">
+        <img src=@selectedModel.WidgetImage />
+        <div class="featured-image-description">
+            @{
+                System.Diagnostics.Debug.WriteLine("WidgetName here:" + selectedModel.WidgetName);
+            }
+            <h1>@selectedModel.WidgetName</h1>
+        </div>
+        <div class="featured-image-description">
+            <h2>⋆ ⋆ ⋆ ⋆</h2>
+        </div>
+    </div>
+    <div></div>
+    <div class="rest-of-images">
+        <div class="feat-wrap">
+            <div class="featured-info">
+                <div class="featured-info-description">
+                    <div class="testing">
+                        <div class="f-i-d-tittle">
+                            <h2>@selectedModel.WidgetName.ToUpper()</h2>
+                            <div class="f-i-d-description">
+                                <h5>Quantity: @selectedModel.Qty</h5>
+                            </div>
+                            <div class="f-i-d-description">
+                                <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat, nunc vel suscipit dignissim, leo ipsum ultricies diam, et tempus arcu felis et nunc. Proin scelerisque a tellus in dapibus. Integer consequat vehicula tellus, a porta lectus tempus sodales. Suspendisse consectetur molestie nulla eu consequat.</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-info-display">
+                    <div class="featured-display-box">
+                        <img src="@selectedModel.WidgetImage" />
+                        <div class="display-quantity">
+
+                            <h6>In Stock   ✔</h6>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="spacer">
+            <h2>_____________________</h2>
+        </div>
+        <div class="load-em-up">
+            <div class="spacing-container" onmouseover="handleMouseOver()" onmouseout="handleMouseOut()">
+                @foreach (var item in Model)
+                {
+                    if (item.WidgetId != selectedModel.WidgetId)
+                    {
+                        <div class="fading-element">
+                            <div class="card-thing" data-widget-id="@item.WidgetId">
+                                <div class="card-inside">
+                                    <div class="rest-of-images-container">
+                                        <div class="card-inside-desc">
+                                            <h2>@item.WidgetName</h2>
+                                            <div><h6>Quantity: @item.Qty</h6></div>
+                                            <div class="star-stuff">
+                                                <h3> ⋆ ⋆ ⋆ ⋆</h3>
+                                            </div>
+                                        </div>
+                                        <img src="@item.WidgetImage" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+    </div>
+        
+    <div class="other-images">
+        <h1>@selectedModel.WidgetName</h1>
+    </div>
+        
+    <div class="check-out-menu">
+        <div class="inside-checkout-header">
+            <h1>Cart</h1>
+        </div>
+        
+        <div class="inside-checkout-card">
+            <div class="inside-checkout-ur-items-header">
+            </div>
+            <div class="inside-checkout-ur-items">
+                <p>Your Items</p>
+                <div>_________________________</div>
+                <div class="checkout-items">
+                    <div class="item-button">
+                        <div class="plus-sign">
+                            <p>+</p>
+                        </div>
+                        <div class="minus-sign">
+                            <p>-</p>
+                        </div>
+                    </div>
+                    <div class="item-descp">
+                        <p>@selectedModel.WidgetName</p>
+                    </div>
+                    <div class="item-image">
+                        <img src="@selectedModel.WidgetImage" />
+                    </div>
+                </div>
+                <div class="checkout-items">
+                    @{
+                        // Select the model skelly
+                        var otherModel = Model.FirstOrDefault(model => model.WidgetId == 2);
+                    }
+                    
+                    
+                    <div class="item-button">
+                        <div class="plus-sign">
+                            <p>+</p>
+                        </div>
+                        <div class="minus-sign">
+                            <p>-</p>
+                        </div>
+                    </div>
+                    <div class="item-descp">
+                        <p>@otherModel.WidgetName</p>
+                    </div>
+                    <div class="item-image">
+                        <img src="@otherModel.WidgetImage" />
+                    </div>
+                    
+
+                </div>
+                
+            </div>
+        </div>
+        <div class="inside-checkout-footer">
+            <div class="purchase-button">
+                <h1>Checkout ✔</h1>
+            </div>
+            
+        </div>
+    </div>
+
+    @*
+
+    @section Scripts{
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function handleCardClick(widgetId) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/UpdateSelectedModel",
+                    data: { widgetId: widgetId },
+                    success: function (response) {
+                        var clickedModel = response;
+                        updateSelectedModel(clickedModel);
+                        refreshUI();
+                    },
+                    error: function (error) {
+                        console.error("Error updating selected model", error);
+                    }
+                });
+            }
+
+            function updateSelectedModel(newModel) {
+                selectedModel = newModel;
+            }
+
+            function refreshUI() {
+                console.log("Updating UI with:", selectedModel);
+
+                // Example: Update the widget name and quantity
+                var featuredImageNameElement = document.querySelector('.featured-image-description h1');
+                console.log("Wat this", featuredImageNameElement);
+                var featuredImageElement = document.querySelector('.featured-image img');
+
+                if (featuredImageNameElement && featuredImageElement) {
+                    featuredImageNameElement.innerText = selectedModel.WidgetName;
+                    featuredImageElement.src = selectedModel.WidgetImage;
+                } else {
+                    console.error("Element with class 'featured-image-description' or 'featured-image' not found.");
+                }
+
+                // Repeat similar checks for other elements
+            }
+
+            var cardThings = document.querySelectorAll('.card-thing');
+            cardThings.forEach(function (card) {
+                card.addEventListener('click', function () {
+                    var widgetId = card.getAttribute('data-widget-id');
+                    console.log("here boi", widgetId);
+                    handleCardClick(widgetId);
+                });
+            });
+        });
+    </script>
+
 </div>
+
+
+
+}
+    *@

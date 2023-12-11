@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Diagnostics;
+using System.Net;
+using System.Net.Http;
 using Widgets.Models;
 using Widgets.Services;
 
@@ -10,6 +14,7 @@ namespace Widgets.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly WidgetService _widgetService;
+    
 
         public HomeController(ILogger<HomeController> logger, WidgetService widgetService)
         {
@@ -17,9 +22,16 @@ namespace Widgets.Controllers
             _widgetService = widgetService;
         }
 
+        [HttpPost]
+        public ActionResult UpdateSelectedModel(int widgetId)
+        {
+            var clickedModel = _widgetService.GetWidgetById(widgetId);
+            return Json(clickedModel);
+        }
+
         public IActionResult Index()
         {
-            return View();
+            return View(_widgetService.GetAllWidgets());
         }
 
         public IActionResult Privacy()

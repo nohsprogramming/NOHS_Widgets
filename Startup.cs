@@ -4,6 +4,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Widgets.Services;
+using Widgets.Data;
+using Microsoft.Extensions.Logging;
 
 namespace Widgets
 {
@@ -21,6 +23,11 @@ namespace Widgets
         {
             services.AddControllersWithViews();
             services.AddScoped<WidgetService>();
+            services.AddScoped<WidgetRepository>();
+            services.AddLogging(builder =>
+            {
+                builder.AddConsole();
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

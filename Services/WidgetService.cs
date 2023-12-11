@@ -11,5 +11,10 @@ namespace Widgets.Services
         public WidgetService(WidgetRepository widgetRepository) => _widgetRepository = widgetRepository;
 
         public IEnumerable<Widget> GetAllWidgets() => _widgetRepository.GetAll();
+
+        public Widget GetWidgetById(int widgetId)
+        {
+            return _widgetRepository.GetWidgetById(widgetId);
+        }
     }
 }
