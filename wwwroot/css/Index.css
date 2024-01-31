@@ -1,0 +1,22 @@
+﻿.widget-container {
+	display: flex;
+	justify-content: center;
+	margin: 1rem;
+}
+
+.widget {
+	padding: 2rem;
+	margin: 1rem;
+}
+
+.widget:hover {
+	background-color: #e6e6e6;
+	border-radius: 2rem;
+	cursor: pointer;
+}
+
+.widget-image {
+	height: 10rem;
+	width: 10rem;
+	border-radius: 20%;
+}
