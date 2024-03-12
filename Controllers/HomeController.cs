@@ -19,18 +19,19 @@ namespace Widgets.Controllers
 
         public IActionResult Index()
         {
-            return View();
+
+            // Fetch widget data from the service
+            var widgetData = _widgetService.GetAllWidgets(); // Example method
+
+           
+            return View(widgetData);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
+
+        
+
+       // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+       
 }
