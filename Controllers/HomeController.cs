@@ -18,8 +18,11 @@ namespace Widgets.Controllers
         }
 
         public IActionResult Index()
+
         {
-            return View();
+            var widgets = _widgetService.GetAllWidgets();
+          
+            return View(widgets);
         }
 
         public IActionResult Privacy()
