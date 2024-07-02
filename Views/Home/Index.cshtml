@@ -1,7 +1,38 @@
-﻿@using Widgets.Data.Models
-@{
-    ViewData["Title"] = "Home Page";
-}
+﻿
 
-<div class="text-center">
-</div>
+    <div class="container mt-5">
+        
+        <div class="card">
+            <div class="card-header font-weight-bold bg-primary text-white text-center">
+                Welcome to Widgets Store
+            </div>
+            <div class="card-body"> 
+                
+                @if (Model != null)
+                {
+                    <div class="row">
+                        @foreach (var obj in Model)
+                        {
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                      <img src="@obj.WidgetImage" height="100px" width="200px" />
+                                        <div class="card-body">
+                                            <h5 class="card-title">@obj.WidgetName</h5>
+                                            <p class="card-text">ID: @obj.WidgetId</p>
+                                            <p class="card-text">Quantity: @obj.Qty</p>
+                                         </div>
+                                     </div>
+                                </div>
+
+                            
+                        }
+                    </div>
+
+                }
+                </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+    </div>
+
