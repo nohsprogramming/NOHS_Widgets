@@ -19,7 +19,8 @@ namespace Widgets.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var images=_widgetService.GetAllWidgets();    // Calling GeAllWidgets method of services class
+            return View(images); // returning view with widgets object.
         }
 
         public IActionResult Privacy()
