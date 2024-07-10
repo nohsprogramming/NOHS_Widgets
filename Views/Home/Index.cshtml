@@ -3,5 +3,39 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-</div>
+@model IEnumerable<Widget>
+<h1 class="my-4"> Widget List</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var widget in Model)
+        {
+            <tr>
+                <td>@widget.WidgetId</td>
+                <td>@widget.WidgetName</td>
+                <td>@widget.Qty</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(widget.WidgetImage))
+                    {
+                        <img src="@widget.WidgetImage" alt="@widget.WidgetImage" style="width:100px;" />
+                    }
+                    else
+                    {
+                        <span>No Image</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
