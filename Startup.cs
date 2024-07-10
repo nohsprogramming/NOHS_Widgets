@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Widgets.Data;
 using Widgets.Services;
 
 namespace Widgets
@@ -20,6 +21,7 @@ namespace Widgets
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddScoped<WidgetRepository>();
             services.AddScoped<WidgetService>();
         }
 
