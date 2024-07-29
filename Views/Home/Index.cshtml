@@ -1,7 +1,34 @@
-﻿@using Widgets.Data.Models
+﻿@using System.IO
+@using static System.Net.Mime.MediaTypeNames
+@using System.Drawing;
+@model  IEnumerable<Widgets.Data.Models.Widget>
 @{
     ViewData["Title"] = "Home Page";
 }
+<script>
+    const myButton = document.getElementById("galleryImageId");
 
-<div class="text-center">
+    console.log(myButton);
+
+    myButton.addEventListener("click", function (data) {
+        console.log("HI thisd is")
+        window.atob(data)
+    })
+
+</script>
+
+
+<div class="container body-contnet">
+    <div class="row gallery-content gallery-image-container1">
+        @foreach(var item in Model)
+        {
+            <div class="gallery-image-details-container">
+            <div class="gallery-image-container" >
+                    <img id="galleryImageId" class="gallery-image" src="@item.WidgetImage" alt="widgets images" onclick="openImage" />
+            </div>
+            <br/>
+                <span class="gallery-content-data"> @item.WidgetName : @item.Qty Qty</span>
+            </div>
+        }
+    </div>
 </div>
