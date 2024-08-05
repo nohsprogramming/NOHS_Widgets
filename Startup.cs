@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Widgets.Data;
 using Widgets.Services;
 
 namespace Widgets
@@ -20,7 +21,9 @@ namespace Widgets
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //services.AddTransient<IServiceCollection, WidgetService>();
             services.AddScoped<WidgetService>();
+            services.AddScoped<WidgetRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
