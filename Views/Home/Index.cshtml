@@ -1,7 +1,22 @@
 ﻿@using Widgets.Data.Models
+
+@model List<Widget>
 @{
     ViewData["Title"] = "Home Page";
+    
 }
 
-<div class="text-center">
-</div>
+
+<div class="text-lg-left">
+    @foreach(var widget in Model)
+    { 
+            <div class="widgetitem text-dark">
+                
+                <div class="widgettitle"><h1 class="widgettitle">Name: @widget.WidgetName</h1></div>
+                <div class="widgettitle"><h3 class="widgettitle">ID: @widget.WidgetId</h3></div>
+                    <div class="widgettitle"><h3 class="widgettitle">Quantity: @widget.Qty</h3></div>
+                <div class="image-wrapper"><img src="@widget.WidgetImage"/></div>
+            </div>
+   
+    }
+    </div>

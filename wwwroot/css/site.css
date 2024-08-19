@@ -1,34 +1,58 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #4F2239;
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #7F53C0;
+    background-color: #19171A;
+    border-color: #2A2042;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #7F53C0;
+    background-color: #19171A;
+    border-color: #2a2042;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
+.text-dark {
+    font-size: 26px !important;
+    font-weight: bold !important;
+    color: #829900 !important;
 }
+
+div.container div.widgetitem {
+    color: #829900 !important;
+    background-color: #30086B !important;
+}
+
+    div.container div.widgetitem div.widgettitle {
+        font-size: 26px !important;
+        font-weight: bold !important;
+        color: #829900 !important;
+    }
+
+div.container > div.widgetitem > div.widgettitle h1{
+    font-size: 26px !important;
+    font-weight: bold !important;
+    color: #829900 !important;
+}
+
+    /* Sticky footer styles
+-------------------------------------------------- */
+    html {
+        font-size: 14px;
+    }
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -36,19 +60,19 @@ html {
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #E2F95F;
 }
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #E2F95F;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(226, 249, 95, .05);
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+    font-size: 1rem;
+    line-height: inherit;
 }
 
 /* Sticky footer styles
@@ -59,8 +83,10 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: #261E2B;
+    color: #E2F95F;
 }
 .footer {
   position: absolute;
@@ -69,3 +95,4 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
