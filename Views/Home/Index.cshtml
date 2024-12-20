@@ -1,7 +1,41 @@
 ﻿@using Widgets.Data.Models
+@model IEnumerable<Widget>
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
+    <table>
+        <tr>
+            Widget ID
+        </tr>
+        <tr>
+            WidgetName
+        </tr>
+        <tr>
+            WidgetImage
+        </tr>
+   @foreach (var widget in Model){
+       <tr>
+      
+    <td>
+        @widget.WidgetId
+    </td>
+        <td>
+            @widget.WidgetName
+        </td>
+        <td>
+            @widget.Qty
+        </td>
+        <td>
+            <img src="@widget.WidgetImage" style="max-height: 65px">
+
+            </img>
+
+        </td>
+            </tr>
+
+
+    }
+    </table>
 </div>
